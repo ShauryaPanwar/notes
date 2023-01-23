@@ -30,15 +30,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api.apps.ApiConfig',
-    'rest_framework',
+    
+     
 ]
 
 MIDDLEWARE = [
@@ -71,6 +71,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'notes.wsgi.application'
 
+REST_FRAMEWORK = {
+'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework.authentication.SessionAuthentication',
+),
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
