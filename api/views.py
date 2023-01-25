@@ -1,6 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializer import NoteSerializer
+from .serializer import NoteSelectSerializer
 from .models import Note
 
 @api_view(['GET'])
@@ -44,5 +44,5 @@ def getRoutes(request):
 @api_view(['GET'])
 def getNotes(request):
     notes = Note.objects.all()
-    serializer = NoteSerializer(notes, many=True)
+    serializer = NoteSelectSerializer(notes, many=True)
     return Response(serializer.data)
